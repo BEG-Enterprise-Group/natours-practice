@@ -1,0 +1,35 @@
+//COLORS
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-secondary-light:#ffb900;
+$color-secondary-dark:#ff7730;
+$color-tertiary-light:#2998ff;
+$color-tertiary-dark:#5643fa;
+$white-color: #fff;
+$black-color:#000;
+$gray-color: #777;
+$gray-light-color-1:#f7f7f7;
+$gray-color-2:#999;
+$gray-color-3:#eee;
+$gray-dark: #333;
+//FONT
+$default-font-size: 1.6rem;
+//SHADOWS
+$text-shadow: .5rem 1rem 2rem rgba($black-color, .2);
+$shadow-dark: 0 1rem 2rem rgba($black-color, .2);
+$shadow-light: 0 .5rem 1rem rgba($black-color, .2);
+$image-shadow: 0 1.5rem 4rem rgba($black-color, .4);
+$image-shadow-respond: 0 1.5rem 3rem rgba($black-color, .2);
+$card-shadow: 0 1.5rem 4rem rgba($black-color, .15);
+$story-shadow: 0 3rem 6rem rgba($black-color, .1);
+//ANIMATIONS
+$transition: all 0.2s;
+$card-transition: all .8s ease;
+//ELEMENT FEATURES
+$border-radius:3px;
+//GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;

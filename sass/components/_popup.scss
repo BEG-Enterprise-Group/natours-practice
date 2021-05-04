@@ -1,0 +1,128 @@
+.popup {
+    background-color: rgba($black-color, .8);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: $card-transition;
+    -o-transition: $card-transition;
+    transition: $card-transition;
+    @supports((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) or (-moz-backdrop-filter: blur(10px)) or (-ms-backdrop-filter: blur(10px)) {
+        background-color: rgba($black-color, .3);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    &__content {
+        @include center-content;
+        width: 75%;
+        background-color: $white-color;
+        -webkit-box-shadow: $card-shadow;
+        box-shadow: $card-shadow;
+        border-radius: $border-radius;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        -ms-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+        -webkit-transition: all .8s .2s;
+        -o-transition: all .8s .2s;
+        transition: all .8s .2s;
+        @include respond(tab-land) {
+            width: 80%;
+        }
+        @include respond(tab-port) {
+            width: 85%;
+        }
+        @include respond(phone) {
+            width: 95%;
+        }
+    }
+    &__left {
+        width: 33.3333333%;
+        display: table-cell;
+        @include respond(tab-land) {
+            vertical-align: middle;
+        }
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+    &__right {
+        width: 66.66666667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+        @include respond(tab-port) {
+            width: auto;
+        }
+    }
+    &__img {
+        display: block; //BECAUSE WE WANT 1 UNDER THE ANOTHER ONE
+        width: 100%;
+        @include respond(tab-land) {
+            padding: 2rem;
+            outline: .1rem dashed $color-primary;
+            &:not(:last-child) {
+                margin-bottom: 5rem;
+            }
+        }
+    }
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: 4rem;
+        -moz-column-gap: 4rem;
+        column-gap: 4rem;
+        -webkit-column-rule: 1px solid $gray-color-3;
+        -moz-column-rule: 1px solid $gray-color-3;
+        column-rule: 1px solid $gray-color-3;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        @include respond(phone) {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+            font-size: 1.2rem;
+        }
+    }
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+    &:target &__content {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    &__close {
+        &:link,
+        &:visited {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: $gray-color;
+            display: inline-block;
+            -webkit-transition: $transition;
+            -o-transition: $transition;
+            transition: $transition;
+            line-height: 1;
+        }
+        &:hover,
+        &:active {
+            color: $color-primary;
+        }
+    }
+}

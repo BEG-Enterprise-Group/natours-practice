@@ -1,0 +1,92 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $gray-color;
+}
+
+%headings {
+    display: block;
+    font-weight: 400;
+}
+
+.heading-primary {
+    color: $white-color;
+    text-transform: uppercase;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    &--main {
+        @extend %headings;
+        @include headings {
+            font-size: 6rem;
+            letter-spacing: 3.5rem;
+            -webkit-animation: moveInLeft 1s ease-out .5s backwards;
+            animation: moveInLeft 1s ease-out .5s backwards;
+        }
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
+    }
+    &--sub {
+        @extend %headings;
+        @include headings {
+            font-size: 2rem;
+            letter-spacing: 1.75rem;
+            -webkit-animation: moveInRight 1.2s ease-in .5s backwards;
+            animation: moveInRight 1.2s ease-in .5s backwards;
+        }
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
+    }
+}
+
+.heading-secondary {
+    display: inline-block;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: -o-linear-gradient(left, $color-primary-light, $color-primary-dark);
+    background-image: -webkit-gradient(linear, left top, right top, from($color-primary-light), to($color-primary-dark));
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+    letter-spacing: 2px;
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+    &:hover {
+        -webkit-transform: skew(15deg, 2deg) scale(1.1);
+        -ms-transform: skew(15deg, 2deg) scale(1.1);
+        transform: skew(15deg, 2deg) scale(1.1);
+        -webkit-text-shadow: $text-shadow;
+        text-shadow: $text-shadow;
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include respond(phone) {
+        font-size: 1.4rem;
+    }
+}
+
+.paragraph {
+    font-size: $default-font-size;
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+    @include respond(phone) {
+        font-size: 1.4rem;
+    }
+}
