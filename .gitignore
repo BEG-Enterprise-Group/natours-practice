@@ -1,4 +1,5 @@
 node_modules
 icon-fonts.css
 style.comp.css
-style.concat.cssstyle.prefix.css
+style.concat.css
+style.prefix.css
